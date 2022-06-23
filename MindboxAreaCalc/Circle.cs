@@ -19,6 +19,10 @@ namespace MindboxAreaCalc
         {
             return DecimalMath.PI * Radius * Radius;
         }
+        public override bool isRectangular()
+        {
+            throw new Exception("Не применимо для окружности");
+        }
 
         public static string Type()
         {

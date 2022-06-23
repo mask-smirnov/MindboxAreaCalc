@@ -3,6 +3,7 @@
     public abstract class Figure
     {
         public abstract decimal Area();
+        public abstract bool isRectangular();
 
         public static Figure Construct(string _type, decimal _dimension1) //конструктор фигур с одним параметром
         {
@@ -18,6 +19,15 @@
         public static Figure Construct(string _type, float _dimension1) => Figure.Construct(_type, (decimal)_dimension1);
         public static Figure Construct(string _type, double _dimension1) => Figure.Construct(_type, (decimal)_dimension1);
 
+        public static Figure Construct(string _type, decimal _dimension1, decimal _dimension2, decimal _dimension3) //конструктор фигур с тремя параметрами
+        {
+            switch (_type)
+            {
+                case string t when t == Triangle.Type(): return new Triangle(_dimension1, _dimension2, _dimension3);
+            }
+
+            throw new Exception(String.Format("Type {0} is not supported", _type));
+        }
 
     }
 }

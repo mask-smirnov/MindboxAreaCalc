@@ -19,7 +19,7 @@ namespace MindboxAreaCalc.Tests
 
             decimal area = c1.Area();
 
-            Assert.AreEqual(area, ( (decimal) Math.PI) * 10m * 10m);
+            Assert.AreEqual(area, DecimalMath.PI * 10m * 10m);
         }
         [TestMethod()]
         public void Area_intRadius_CorrectValue()
@@ -29,7 +29,7 @@ namespace MindboxAreaCalc.Tests
 
             decimal area = c1.Area();
 
-            Assert.AreEqual(area, ((decimal)Math.PI) * 10m * 10m);
+            Assert.AreEqual(area, DecimalMath.PI * 10m * 10m);
         }
         [TestMethod()]
         public void Area_floatRadius_CorrectValue()
@@ -39,7 +39,7 @@ namespace MindboxAreaCalc.Tests
 
             decimal area = c1.Area();
 
-            Assert.AreEqual(area, ((decimal)Math.PI) * 0.1m * 0.1m);
+            Assert.AreEqual(area, DecimalMath.PI * 0.1m * 0.1m);
         }
         [TestMethod()]
         public void Area_doubleRadius_CorrectValue()
@@ -49,7 +49,7 @@ namespace MindboxAreaCalc.Tests
 
             decimal area = c1.Area();
 
-            Assert.AreEqual(area, ((decimal)Math.PI) * 0.1m * 0.1m);
+            Assert.AreEqual(area, DecimalMath.PI * 0.1m * 0.1m);
         }
 
 
@@ -59,6 +59,23 @@ namespace MindboxAreaCalc.Tests
             String str = Circle.Type();
 
             Assert.AreEqual(str, "Circle");
+        }
+        [TestMethod()]
+        public void isRectangular__Exception()
+        {
+            Figure t1 = Figure.Construct(Circle.Type(), 1);
+            bool exception = false;
+
+            try
+            {
+                bool isRect = t1.isRectangular();
+            }
+            catch 
+            {
+                exception = true;
+            }
+
+            Assert.AreEqual(exception, true);
         }
     }
 }
