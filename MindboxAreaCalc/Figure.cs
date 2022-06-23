@@ -3,6 +3,7 @@
     public abstract class Figure
     {
         public abstract decimal Area();
+
         public static Figure Construct(string _type, decimal _dimension1) //конструктор фигур с одним параметром
         {
             switch (_type)
