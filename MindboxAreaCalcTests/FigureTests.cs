@@ -20,14 +20,6 @@ namespace MindboxAreaCalc.Tests
 
             Assert.AreEqual(classTypeStr, "Circle");
         }
-        [TestMethod()]
-        public void SqrtDecimal_1_1()
-        {
-            decimal x = 1m;
 
-            decimal ret = MindboxAreaCalc.DecimalMath.SqrtDecimal(x);
-
-            Assert.AreEqual(ret, 1m);
-        }
     }
 }

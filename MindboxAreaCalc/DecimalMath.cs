@@ -2,7 +2,9 @@
 {
     public static class DecimalMath
     {
-        public static decimal EpsilonDecimal(decimal x)
+        public const decimal PI = 3.141592653589793238462643383279m;
+
+        public static decimal EpsilonDecimal()
         {
             return (decimal)(1 / Math.Pow(10, 28)); //допустимая погрешность
         }
@@ -14,8 +16,6 @@
         {
             if (x < 0) throw new OverflowException("Cannot calculate square root from a negative number");
 
-            decimal epsilon = (decimal)(1 / Math.Pow(10, 28)); //допустимая погрешность
-
             decimal current = (decimal)Math.Sqrt((double)x); //сначала вычисляем грубо в double
             decimal previous;
             do
@@ -24,7 +24,7 @@
                 if (previous == 0.0M) return 0;
                 current = (previous + x / previous) / 2m;
             }
-            while (Math.Abs(previous - current) > epsilon);
+            while (Math.Abs(previous - current) > DecimalMath.EpsilonDecimal());
             return current;
         }
     }

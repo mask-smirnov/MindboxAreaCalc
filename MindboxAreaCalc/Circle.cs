@@ -17,7 +17,7 @@ namespace MindboxAreaCalc
 
         public override decimal Area()
         {
-            return ((decimal) Math.PI) * Radius * Radius;
+            return DecimalMath.PI * Radius * Radius;
         }
 
         public static string Type()
