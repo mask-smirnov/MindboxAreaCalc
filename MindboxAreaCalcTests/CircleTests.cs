@@ -1,10 +1,4 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using MindboxAreaCalc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MindboxAreaCalc.Tests
 {
@@ -35,11 +29,12 @@ namespace MindboxAreaCalc.Tests
         public void Area_floatRadius_CorrectValue()
         //радиус float
         {
-            Figure c1 = Figure.Construct(Circle.Type(), (float).1m);
+            float radius = .12344F;
+            Figure c1 = Figure.Construct(Circle.Type(), radius);
 
             decimal area = c1.Area();
 
-            Assert.AreEqual(area, DecimalMath.PI * 0.1m * 0.1m);
+            Assert.AreEqual(area, DecimalMath.PI * (decimal)radius * (decimal)radius);
         }
         [TestMethod()]
         public void Area_doubleRadius_CorrectValue()

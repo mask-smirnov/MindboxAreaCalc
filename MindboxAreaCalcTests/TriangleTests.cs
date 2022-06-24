@@ -1,10 +1,4 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using MindboxAreaCalc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MindboxAreaCalc.Tests
 {
@@ -42,9 +36,9 @@ namespace MindboxAreaCalc.Tests
             Assert.AreEqual(isRect, true);
         }
         [TestMethod()]
-        public void isRectangular_111_NotRect()
+        public void isRectangular_11100_NotRect()
         {
-            Figure t1 = Figure.Construct(Triangle.Type(), 1, 1, 1);
+            Figure t1 = Figure.Construct(Triangle.Type(), 1, 1, 1.5);
 
             bool isRect = t1.isRectangular();
 
@@ -53,7 +47,7 @@ namespace MindboxAreaCalc.Tests
         [TestMethod()]
         public void isRectangular_10E27_Exception()
         {
-            Figure t1 = Figure.Construct(Triangle.Type(), 1E27m, 1, 1);
+            Figure t1 = Figure.Construct(Triangle.Type(), 1E27m, 1E27m, 1E27m);
             bool overflow = false; 
 
             try

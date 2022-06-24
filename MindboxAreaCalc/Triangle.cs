@@ -11,6 +11,11 @@ namespace MindboxAreaCalc
         decimal sideA, sideB, sideC;
         public Triangle(decimal sideA, decimal sideB, decimal sideC)
         {
+            if ((sideA > sideB + sideC) ||
+                (sideB > sideC + sideA) ||
+                (sideC > sideA + sideB))
+                throw new Exception("Невозможное соотношение сторон треугольника");
+
             this.sideA = sideA;
             this.sideB = sideB; 
             this.sideC = sideC;
