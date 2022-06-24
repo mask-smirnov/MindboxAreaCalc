@@ -8,7 +8,7 @@ namespace MindboxAreaCalc.Tests
         [TestMethod()]
         public void Construct_Circle_Constructed()
         {
-            Figure c1 = Figure.Construct(Circle.Type(), 10);
+            IFigure c1 = Figure.Construct(Circle.Type(), 10);
 
             string classTypeStr = c1.GetType().Name;
 

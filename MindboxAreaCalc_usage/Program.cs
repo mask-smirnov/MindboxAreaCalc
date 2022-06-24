@@ -1,8 +1,7 @@
 ﻿using MindboxAreaCalc_usage;
 
 
-AreaCalcUsage areaCalcUsage = new AreaCalcUsage();
-areaCalcUsage.run();
+new AreaCalcUsage().run();
 
 Console.WriteLine("Press any key");
 Console.ReadKey();

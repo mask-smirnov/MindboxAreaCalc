@@ -1,12 +1,12 @@
 ﻿namespace MindboxAreaCalc
 {
-    public abstract class Figure
+    public abstract class Figure : IFigure
     {
         public abstract decimal Area();
         public abstract bool isRectangular();
 
 
-        public static Figure Construct(string _type, decimal _dimension1, decimal _dimension2 = 0, decimal _dimension3 = 0)
+        public static IFigure Construct(string _type, decimal _dimension1, decimal _dimension2 = 0, decimal _dimension3 = 0)
         {
             switch (_type)
             {
@@ -16,11 +16,11 @@
 
             throw new Exception(String.Format("Type {0} is not supported", _type));
         }
-        public static Figure Construct(string _type, int _dimension1, int _dimension2 = 0, int _dimension3 = 0) 
+        public static IFigure Construct(string _type, int _dimension1, int _dimension2 = 0, int _dimension3 = 0) 
             => Figure.Construct(_type, (decimal)_dimension1, (decimal)_dimension2, (decimal)_dimension3);
-        public static Figure Construct(string _type, float _dimension1, float _dimension2 = 0, float _dimension3 = 0)
+        public static IFigure Construct(string _type, float _dimension1, float _dimension2 = 0, float _dimension3 = 0)
             => Figure.Construct(_type, (decimal)_dimension1, (decimal)_dimension2, (decimal)_dimension3);
-        public static Figure Construct(string _type, double _dimension1 = 0, double _dimension2 = 0, double _dimension3 = 9)
+        public static IFigure Construct(string _type, double _dimension1 = 0, double _dimension2 = 0, double _dimension3 = 9)
             => Figure.Construct(_type, (decimal)_dimension1, (decimal)_dimension2, (decimal)_dimension3);
 
     }

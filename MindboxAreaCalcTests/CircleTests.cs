@@ -9,7 +9,7 @@ namespace MindboxAreaCalc.Tests
         public void Area_DecimalRadius_CorrectValue()
         //радиус decimal
         {
-            Figure c1 = Figure.Construct(Circle.Type(), 10m);
+            IFigure c1 = Figure.Construct(Circle.Type(), 10m);
 
             decimal area = c1.Area();
 
@@ -19,7 +19,7 @@ namespace MindboxAreaCalc.Tests
         public void Area_intRadius_CorrectValue()
         //радиус int
         {
-            Figure c1 = Figure.Construct(Circle.Type(), 10);
+            IFigure c1 = Figure.Construct(Circle.Type(), 10);
 
             decimal area = c1.Area();
 
@@ -30,7 +30,7 @@ namespace MindboxAreaCalc.Tests
         //радиус float
         {
             float radius = .12344F;
-            Figure c1 = Figure.Construct(Circle.Type(), radius);
+            IFigure c1 = Figure.Construct(Circle.Type(), radius);
 
             decimal area = c1.Area();
 
@@ -40,7 +40,7 @@ namespace MindboxAreaCalc.Tests
         public void Area_doubleRadius_CorrectValue()
         //радиус double
         {
-            Figure c1 = Figure.Construct(Circle.Type(), (double).1m);
+            IFigure c1 = Figure.Construct(Circle.Type(), (double).1m);
 
             decimal area = c1.Area();
 
@@ -58,7 +58,7 @@ namespace MindboxAreaCalc.Tests
         [TestMethod()]
         public void isRectangular__Exception()
         {
-            Figure t1 = Figure.Construct(Circle.Type(), 1);
+            IFigure t1 = Figure.Construct(Circle.Type(), 1);
             bool exception = false;
 
             try
